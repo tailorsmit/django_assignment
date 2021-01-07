@@ -59,9 +59,9 @@ def verifyotp(request, otp):
     get_otp = str(otp)
     user_otp = str(Otp.objects.filter(user=request.user).last())
     print(user_otp)
-    if user_otp == get_otp or get_otp == '123456':
+    if user_otp == get_otp:
         x = request.user
         x.verified = True
         x.save()
-        return response.Response({'message': 'otp verified'})
-    return response.Response({'message': 'otp not verified'})
+        return response.Response({'message': 'phone number verified'})
+    return response.Response({'message': 'otp invalid'})
