@@ -12,11 +12,11 @@ if you have already installed django skip steps written below.
 
 Step 1: pip install virtualenv      # To install virtualenv binary command
 Step 2: virtualenv venv             # To create separate virtual environment for our project.
-Step 3: source ./venv/bin/activate  # To activate virtual enviroment.
+Step 3: source ./venv/bin/activate  # To activate virtual environment.
 Step 4: pip install django          # To install django in out project.
 
 
-Now, we have django instlled.
+Now, we have django installed.
 Let's go and configure project dependency.
 
 just copy below line to Install & use django_rest_framework
@@ -37,7 +37,7 @@ Let's run our server.
 python manage.py runserver
 
 you should see the url like http://127.0.0.1:8000/
-go to your browser paste linke hit enter.
+go to your browser paste link hit enter.
 
 you can see 2 endpoints 
 1. http://127.0.0.1:8000/admin/
@@ -58,21 +58,21 @@ Authorization : Token <<paste your token here>> (without <<>>)
 Now, Navigate to, http://127.0.0.1:8000/api/user/me/
 You should see the current logged in user.
 
-So, we can see that verified field is False as we havent confirmed our mobile no. yet.
+So, we can see that verified field is False as we haven't confirmed our mobile no. yet.
 NOTE: i haven't included mobile sms because most of sms Apis were Paid or have limited sms count a day.
 
 To obtain the otp, Navigate to http://127.0.0.1:8000/api/user/request-otp/
-if you have already verified your phone numer you should see the response message As,
+if you have already verified your phone number you should see the response message As,
 {'message' : 'user already verified'}
 otherwise, you should see belo message
 {'message': 'otp sent successfully'}
 
 To verify the otp, Go to, http://127.0.0.1:8000/api/user/verify-otp/<<received otp>> (without <<>>)
-if you have already verified your phone numer you should see the response message As,
+if you have already verified your phone number you should see the response message As,
 {'message' : 'user already verified'}
 otherwise, you should see below message, if you provide valid otp.
 {'message': 'phone number verified'}
-if you dont provide valid otp, the you shoul see this message,
+if you dont provide valid otp, the you should see this message,
 {'message': 'otp invalid'}
 
 
